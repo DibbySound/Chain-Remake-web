@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#11140f" />
+    <title>CHAIN — Survival Prototype</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div class="brand"><span class="brand-mark">C</span><div><strong>CHAIN</strong><small>PROTÓTIPO SURVIVAL</small></div></div>
+        <div class="session"><span class="live-dot"></span><span id="phase-label">DIA</span><span class="divider">/</span><span id="clock-label">02:00</span><span class="divider">/</span><span id="players-label">1 SOBREVIVENTE</span></div>
+        <button class="icon-button" id="help-button" title="Controlos">?</button>
+      </header>
+
+      <section class="game-frame">
+        <div id="game" aria-label="Jogo CHAIN Survival"></div>
+        <div class="boot-status" id="boot-status">A iniciar a cena 3D…</div>
+        <div class="world-vignette"></div>
+        <div class="hud-top"><div class="location"><span class="location-pin">⌖</span><span id="location-label">ACAMPAMENTO</span></div><div class="objective" id="objective-label">PREPARA-TE PARA A NOITE</div></div>
+        <div class="crosshair" id="crosshair"><i></i><b></b></div>
+        <div class="hud-bottom">
+          <div class="vitals"><div class="vital-row"><span>VIDA</span><div class="meter"><i id="health-meter"></i></div><b id="health-value">100</b></div><div class="vital-row"><span>FÔLEGO</span><div class="meter stamina"><i id="stamina-meter"></i></div><b id="stamina-value">100</b></div><div class="vital-row combat-vital"><span>COMBATE</span><div class="meter combat"><i id="combat-meter"></i></div><b id="combat-value">100</b></div></div>
+          <div class="quickbar" id="quickbar"></div>
+          <div class="wallet"><span class="coin">◆</span><b id="points-value">0</b><small>PONTOS</small></div>
+        </div>
+        <div class="interact-prompt" id="prompt"></div>
+        <div class="toast" id="toast" aria-live="polite"></div>
+        <div class="death-overlay hidden" id="death-overlay"><div class="death-card"><small>NOITE TERMINADA</small><h2>Foste apanhado.</h2><p>Sobreviveste tempo suficiente para aprender. A próxima noite começa em breve.</p><button id="respawn-button">VOLTAR AO ACAMPAMENTO</button></div></div>
+      </section>
+
+      <footer class="bottom-bar"><div class="hint"><kbd>WASD</kbd> MOVER <kbd>SHIFT</kbd> CORRER <kbd>Q</kbd> ESQUIVAR</div><div class="hint"><kbd>E</kbd> INTERAGIR <kbd>F</kbd> BLOQUEAR <kbd>1–5</kbd> EQUIPAR</div><div class="status-note">DEMO LOCAL <span>•</span> BAIXO CONSUMO</div></footer>
+    </main>
+
+    <div class="modal-backdrop hidden" id="modal-backdrop"><section class="modal" role="dialog" aria-modal="true"><button class="close-button" id="close-modal">×</button><div id="modal-content"></div></section></div>
+    <script type="importmap">
+      {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js"}}
+    </script>
+    <script type="module" src="./src/bootstrap.js"></script>
+  </body>
+</html>
